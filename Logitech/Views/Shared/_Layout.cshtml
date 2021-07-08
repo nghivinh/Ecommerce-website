@@ -1,0 +1,520 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Logitech</title>
+    <link rel="shortcut icon" href="~/img/shopee_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/base.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            Tải ứng dụng
+                            <div class="header__QR">
+                                <img src="~/img/QRCode.png" alt="QR Code" class="header__QR-img">
+                                <div class="header__QR-download">
+                                    <a href="">
+                                        <img src="~/img/AppStore.png" alt="App Store"
+                                             class="header__QR-download-link">
+                                    </a>
+                                    <a href="">
+                                        <img src="~/img/GooglePlay.png" alt="Google Play"
+                                             class="header__QR-download-link">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <span class="bulkhead">|</span>
+                        <li class="header__navbar-item header__navbar-item--nohover">
+                            Kết nối
+                            <a href="https://www.facebook.com/Logitech" target="_blank" class="header__navbar-item--icon"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/logitech" target="_blank" class="header__navbar-item--icon"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="fas fa-bell"></i>
+                                Thông Báo
+                            </a>
+                            <div class="header__notify">
+                                <p class="header__notify-header">Thông Báo Mới Nhận</p>
+                                <ul class="header__notify-list">
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <img src="https://cf.shopee.vn/file/93d8208ae615e1a153b21da3ff46d292_tn"
+                                                 alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <p class="header__notify-title">Shopee nhớ bạn!</p>
+                                                <p class="header__notify-content">
+                                                    Lâu rồi, không ghé thăm Shopee <b>Nguyễn Vĩnh Nghi</b>
+                                                    bỏ quên nhiều thứ lắm! Kiểm tra ngay.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link header__notify-link--unread">
+                                            <img src="https://cf.shopee.vn/file/93d8208ae615e1a153b21da3ff46d292_tn"
+                                                 alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <p class="header__notify-title">Shopee nhớ bạn!</p>
+                                                <p class="header__notify-content">
+                                                    Lâu rồi, không ghé thăm Shopee <b>Nguyễn Vĩnh Nghi</b>
+                                                    bỏ quên nhiều thứ lắm! Kiểm tra ngay.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link header__notify-link--unread">
+                                            <img src="https://cf.shopee.vn/file/93d8208ae615e1a153b21da3ff46d292_tn"
+                                                 alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <p class="header__notify-title">Shopee nhớ bạn!</p>
+                                                <p class="header__notify-content">
+                                                    Lâu rồi, không ghé thăm Shopee <b>Nguyễn Vĩnh Nghi</b>
+                                                    bỏ quên nhiều thứ lắm! Kiểm tra ngay.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify-item ">
+                                        <a href="" class="header__notify-link">
+                                            <img src="https://cf.shopee.vn/file/93d8208ae615e1a153b21da3ff46d292_tn"
+                                                 alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <p class="header__notify-title">Shopee nhớ bạn!</p>
+                                                <p class="header__notify-content">
+                                                    Lâu rồi, không ghé thăm Shopee <b>Nguyễn Vĩnh Nghi</b>
+                                                    bỏ quên nhiều thứ lắm! Kiểm tra ngay.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <p class="header__notify-footer"><a href="www.google.com">Xem tất cả</a></p>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="fas fa-question-circle"></i>
+                                Hỗ Trợ
+                            </a>
+                        </li>
+
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("ID") != null)
+                        {
+                            <li class="header__navbar-item">
+                                <div class="header__navbar-user">
+                                    <img src="https://image.flaticon.com/icons/png/128/3237/3237472.png"
+                                         alt="" class="header__navbar-user-avarta">
+                                    <span class="header__navbar-user-name">@HttpContextAccessor.HttpContext.Session.GetString("FullName")</span>
+                                </div>
+
+                                <ul class="header__navbar-user-menu">
+                                    <li class="header__navbar-user-item">
+                                        <a href="">Hồ Sơ</a>
+                                    </li>
+                                    <li class="header__navbar-user-item">
+                                        <a href="">Đơn Mua</a>
+                                    </li>
+                                    <li class="header__navbar-user-item">
+                                        <a href="@Url.Action("Logout","Home")" class="header__navbar-item-link">Đăng Xuất</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="header__navbar-item header__navbar-item--strong">
+                                <a href="@Url.Action("Register","Home")" class="header__navbar-item-link">Đăng Ký</a>
+                            </li>
+                            <span class="bulkhead">|</span>
+                            <li class="header__navbar-item header__navbar-item--strong">
+                                <a href="@Url.Action("Login","Home")" class="header__navbar-item-link">Đăng Nhập</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+
+                <div class="header-with-search">
+                    <a href="" class="header__logo">
+                         <img src="https://image.flaticon.com/icons/png/512/882/882732.png" alt="logo" class="header__logo--icon"> 
+                    </a>
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-list-item">
+                                        <a href="">Quạt mini gắn USB</a>
+                                    </li>
+                                    <li class="header__search-history-list-item">
+                                        <a href="">Chuột không dây 2.5Hz</a>
+                                    </li>
+                                    <li class="header__search-history-list-item">
+                                        <a href="">Chảo chống dính Tefon</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="header__search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="header__cart">
+                        <!-- Cart has Product -->
+                        <div class="header__cart-wrap">
+                            <i class="header__cart-icon fas fa-shopping-cart"></i>
+                            <span class="header__cart-notice">3</span>
+                            <div class="header__cart-container">
+                                <p class="header__cart-container-header">Sản Phẩm Mới Thêm</p>
+                                <ul class="header__cart-list">
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/b4fe39abb0232577befe6d98dda5d483_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Quạt để bàn - Quạt văn phòng</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">73.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">3</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Xanh ngọc</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/bd95e7103c5ae8a90347feaa6f20885b_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Bộ Lego Nhà Du Hành Vũ Trụ</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">59.500đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">1</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Du hành cầm hoa</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/945cbce088d86d34b7c3f2c4e5eb9ee8_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Hộp đựng tai nghe</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">14.900đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">28</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Khiêng Caption</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/945cbce088d86d34b7c3f2c4e5eb9ee8_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Hộp đựng tai nghe</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">14.900đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">28</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Khiêng Caption</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/945cbce088d86d34b7c3f2c4e5eb9ee8_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Hộp đựng tai nghe</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">14.900đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">28</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Khiêng Caption</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/945cbce088d86d34b7c3f2c4e5eb9ee8_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Hộp đựng tai nghe</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">14.900đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">28</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Khiêng Caption</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/945cbce088d86d34b7c3f2c4e5eb9ee8_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Hộp đựng tai nghe</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">14.900đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">28</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Khiêng Caption</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/945cbce088d86d34b7c3f2c4e5eb9ee8_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Hộp đựng tai nghe</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">14.900đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">28</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Khiêng Caption</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/945cbce088d86d34b7c3f2c4e5eb9ee8_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Hộp đựng tai nghe</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">14.900đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">28</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Khiêng Caption</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/945cbce088d86d34b7c3f2c4e5eb9ee8_tn" alt=""
+                                             class="header__cart-item-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Hộp đựng tai nghe</h5>
+                                                <div class="header__cart-item-content">
+                                                    <span class="header__cart-item-price">14.900đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-amout">28</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng:
+                                                    <span class="header__cart-item-type">Khiêng Caption</span>
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="" class="header__cart-view-btn btn btn--primary">Xem Giỏ Hàng</a>
+                            </div>
+                        </div>
+                        <!-- Cart Empty -->
+                        <div class="header__cart-wrap--empty cart--empty">
+                            <i class="header__cart-icon--empty fas fa-shopping-cart"></i>
+                            <div class="header__cart-container--empty">
+                                <img src="~/img/cartEmpty.png" alt="cartEmpty" class="header_cart--empty-img">
+                                <p class="header_cart--empty-text">Chưa Có Sản Phẩm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="footer">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__col-2-5">
+                        <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Trung tâm trợ giúp</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Chính sách đổi trả</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Câu hỏi thường gặp</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__col-2-5">
+                        <h3 class="footer__heading">Về LOGITECH</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Giới thiệu Logitech</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Tuyển dụng</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Điều khoản sử dụng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__col-2-5">
+                        <h3 class="footer__heading">HỢP TÁC VÀ LIÊN KẾT</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Quy chế hoạt động Sàn GDTMĐT</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item-link">Bán hàng cùng Logitech</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__col-2-5">
+                        <h3 class="footer__heading">Theo dõi chúng tôi trên</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="https://www.facebook.com/Logitech" target="_blank" class="footer__item-link">
+                                    <i class="footer__item-link-icon fab fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="https://www.instagram.com/logitech" target="_blank" class="footer__item-link">
+                                    <i class="footer__item-link-icon fab fa-instagram"></i>
+                                    Instagram
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="https://www.twitter.com/Logitech" target="_blank" class="footer__item-link">
+                                    <i class="footer__item-link-icon fab fa-twitter"></i>
+                                    Twitter
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__col-2-5">
+                        <h3 class="footer__heading">Tải ứng dụng Logitech</h3>
+                        <div class="footer__download">
+                            <img src="~/img/QRCode.png" alt="QR Code" class="footer__download-img">
+                            <div class="footer__download-apps">
+                                <a href="">
+                                    <img src="~/img/AppStore.png" alt="App Store"
+                                         class="footer__download-apps-link">
+                                </a>
+                                <a href="">
+                                    <img src="~/img/GooglePlay.png" alt="Google Play"
+                                         class="footer__download-apps-link">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid__row">
+                    <p class="footer__copyright">©2021 - Bản quyền của Công Ty Logitech</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

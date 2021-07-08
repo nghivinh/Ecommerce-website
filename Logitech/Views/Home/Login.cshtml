@@ -1,0 +1,50 @@
+﻿@model Logitech.Models.Account
+@{
+    ViewData["Title"] = "Đăng nhập";
+    Layout = "~/Views/Shared/_LayoutHeader.cshtml";
+}
+
+<div class="auth-form">
+    <div class="auth-form__top">
+        <div class="auth-form__header">
+            <h3 class="auth-form__heading">Đăng nhập</h3>
+            <span class="auth-form__switch-btn">
+                <a href="@Url.Action("Register","Home")">Đăng Ký</a>
+            </span>
+        </div>
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="auth-form__form">
+                <div class="auth-form__group">
+                    @Html.TextBoxFor(a => a.UserName, "", new { @class = "auth-form__input", @placeholder = "Tên người dùng" })
+                </div>
+                <div class="auth-form__group">
+                    @Html.PasswordFor(a => a.Password, new { @class = "auth-form__input", @placeholder = "Mật khẩu của bạn" })
+                </div>
+            </div>
+
+            <div class="auth-form__aside">
+                <div class="auth-form__help">
+                    <a href="" class="auth-form__help-link auth-form__help-link--forgot">Quên mật khẩu</a>
+                    <span class="bulkhead mlf-16">|</span>
+                    <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                </div>
+            </div>
+
+            <div class="auth-form_controls">
+                <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
+            </div>
+        }
+    </div>
+    <div class="auth-form_socials">
+        <a href="" class="btn--with-icon btn--facebook">
+            <img src="~/img/facebook.png" alt="Facebook" class="auth-form_socials--icon">
+            <span class="auth-form_socials--text">Kết nối với Facebook</span>
+        </a>
+        <a href="" class="btn--with-icon btn--google">
+            <img src="~/img/google.svg" alt="Google" class="auth-form_socials--icon">
+            <span class="auth-form_socials--text">Kết nối với Google</span>
+        </a>
+    </div>
+</div>
