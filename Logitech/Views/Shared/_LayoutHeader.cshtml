@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Logitech</title>
+    <link rel="shortcut icon" href="~/img/shopee_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/base.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/layoutHeader.css">
+    <link rel="stylesheet" href="~/css/productdetail.css">
+    <link rel="stylesheet" href="~/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="layoutHeader">
+        <div class="grid">
+            <div class="layoutHeader__header">
+                <a href="" class="layoutHeader_header__link">
+                    <img src="~/img/logitech-logo.png" alt=""
+                         class="layoutHeader_header__logo">
+                </a>
+                <p class="layoutHeader_header__title">@ViewData["Title"]</p>
+            </div>
+        </div>
+    </header>
+    <div class=" layoutHeader__container ptb-36">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__col-50">
+                    <div class="layoutHeader__container-left">
+                        <img src="~/img/logitech-sologan.png" alt="" class="layoutHeader__container-left-img">
+                        <p class="layoutHeader__container-left-sologan">Thương hiệu điện tử đến từ Thụy Sĩ<p />
+                    </div>
+                </div>
+                <div class="grid__col-50">
+                    <div class="layoutHeader__container-right">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,227 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@model Logitech.ViewModel.LoadProductDetail
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+@{
+    float starSum = ViewBag.StarSum;
+    float starCount = ViewBag.StarCount;
+
+    float agvStar = 0;
+    if (starCount > 0)
+    {
+        agvStar = (starSum / starCount);
+    }
+}
+
+<div class="container pt-36">
+    <div class="grid">
+        <div class="grid__row product-detail__wrap">
+            <div class="grid__col-40">
+                <img src="@Model.Image" alt="logo" class="product-detail__img">
+            </div>
+
+            <div class="grid__col-60">
+                <div class="product-detail">
+                    <h3 class="product-detail__name">@Model.Name</h3>
+                    <div class="product-detail__quantity">
+                        <div class="product-detail__rating">
+                            @if (agvStar == 0)
+                            {
+                                <div class="product-detail__rating-text-no">Chưa có đánh giá</div>
+                            }
+                            else
+                            {
+                                <div class="product-detail__rating-text">@Math.Round((double)agvStar, 1).ToString().Replace(",",".")</div>
+                                <div class="product-detail__rating-star">
+                                    @{
+                                        var _agvStar = Math.Round((double)agvStar, 0);
+                                        for (int i = 0; i < _agvStar; i++)
+                                        {
+                                            <i class="product-detail__rating-star--gold fas fa-star"></i>
+                                        }
+                                        for (int i = 0; i < 5 - _agvStar; i++)
+                                        {
+                                            <i class="fas fa-star"></i>
+                                        }
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <span class="bulkhead">|</span>
+                        <div class="product-detail__sold">
+                            <span class="product-detail__sold-text">@Model.Sold</span>
+                            <span class="product-detail__sold-label">Đã Bán</span>
+                        </div>
+                        <span class="bulkhead">|</span>
+                        <div class="product-detail__store">
+                            <span class="product-detail__store-text">@Model.Store</span>
+                            <span class="product-detail__store-label">Sản phẩm có sẵn</span>
+                        </div>
+                    </div>
+
+                    <div class="product-detail__content">
+                        <div class="product-detail__price">
+                            @if (Model.SaleOff == 0)
+                            {
+                                <span class="product-detail__price-new">@Model.Price.ToString("#,##0")<span>đ</span></span>
+                            }
+                            else
+                            {
+                                var priceOld = Model.Price;
+                                var priceNew = Model.Price * (100 - Model.SaleOff) / 100;
+                                if (priceNew == priceOld)
+                                {
+                                    <span class="product-detail__price-old">@priceNew.ToString("#,##0")<span>đ</span></span>
+                                }
+                                else
+                                {
+                                    <span class="product-detail__price-old">@priceOld.ToString("#,##0")<span>đ</span></span>
+                                    <span class="product-detail__price-new">@priceNew.ToString("#,##0")<span>đ</span></span>
+                                }
+                                <div class="product-detail__price-saleoff"><span>@Model.SaleOff</span>% Giảm</div>
+                            }
+                        </div>
+                        <div class="product-detail__button">
+                            <button class="btn btn__add-to-cart">
+                                <i class="fas fa-cart-plus"> </i>
+                                Thêm Vào Giỏ Hàng
+                            </button>
+                            <button class="btn btn__buy-now">Mua Ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid__row mt-36">
+            <div class="grid__ful-width">
+                <div class="product-detail__information">
+                    <h2 class="product-detail__information-heading">Thông tin Sản Phẩm</h2>
+                    <div class="product-detail__information-text">
+                        @Model.Description
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid__row mt-36 pb-36">
+            <div class="grid__ful-width">
+                <div class="product-detail__feedback">
+                    <h2 class="product-detail__feedback-heading">Đánh Giá Sản Phẩm</h2>
+                    @foreach (var item in Model.ListOfReview)
+                    {
+                        <div class="product-detail__feedback-list">
+                            <div class="product-detail__feedback-item">
+                                <div class="product-detail__feedback-item-top">
+                                    <h4 class="product-detail__feedback-username">@item.FullName</h4>
+                                    <p class="product-detail__feedback-createDate">vào ngày <span>@item.CreateDate</span></p>
+                                </div>
+                                <div class="product-detail__feedback-star">
+                                    @{
+                                        for (int i = 0; i < item.Star; i++)
+                                        {
+                                            <i class="product-detail__feedback-star--gold fas fa-star"></i>
+                                        }
+                                        for (int i = 0; i < 5 - item.Star; i++)
+                                        {
+                                            <i class="fas fa-star"></i>
+                                        }
+                                    }
+                                </div>
+                                <p class="product-detail__feedback-comment">@Html.Raw(item.Comment.Replace("\r\n", "<br />"))</p>
+                            </div>
+                            <hr class="style-hr" />
+                        </div>
+                    }
+
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("Id") != null)
+                    {
+                        @using (Html.BeginForm("Add", "ProductDetail", FormMethod.Post, new { onsubmit = "return SubmitComment()" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="product-detail__feedback-write">
+                                <p class="product-detail__feedback-write-heading">Viết đánh giá</p>
+                                <div class="product-detail__feedback-write-comment">
+                                    <textarea name="Comment" id="Comment" required rows="5"
+                                              class="product-detail__feedback-textarea"
+                                              placeholder="Bạn nhận xét sản phẩm như thế nào?"></textarea>
+                                </div>
+                                <div class="product-detail__feedback-rating">
+                                    <p class="product-detail__feedback-rating-label">
+                                        Bạn đánh giá sản phẩm bao nhiêu sao?<br />(1 sao là rất tệ, 5 sao là rất tốt)
+                                    </p>
+                                    <div class="product-detail__feedback-rating-action">
+                                        <div onmouseout="CRateSelected()">
+                                            <span class="star--normal fas fa-star" id="Rate1" onclick="CRate(1)" onmouseover="CRateOver(1)" onmouseout="CRateOut(1)"></span>
+                                            <span class="star--normal fas fa-star" id="Rate2" onclick="CRate(2)" onmouseover="CRateOver(2)" onmouseout="CRateOut(2)"></span>
+                                            <span class="star--normal fas fa-star" id="Rate3" onclick="CRate(3)" onmouseover="CRateOver(3)" onmouseout="CRateOut(3)"></span>
+                                            <span class="star--normal fas fa-star" id="Rate4" onclick="CRate(4)" onmouseover="CRateOver(4)" onmouseout="CRateOut(4)"></span>
+                                            <span class="star--normal fas fa-star" id="Rate5" onclick="CRate(5)" onmouseover="CRateOver(5)" onmouseout="CRateOut(5)"></span>
+                                        </div>
+                                    </div>
+                                    <div class="product-detail__feedback-select-star">
+                                        <input type="hidden" name="ProductId" value="@Model.Id" />
+                                        <input type="hidden" name="Star" id="Rating" value="0" />
+                                        <input type="hidden" name="AccountId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />
+                                        <input type="submit" value="Gửi đánh giá ngay" class="btn btn--primary" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    } 
+                    else
+                    {
+                        <div class="product-detail__feedback-write--no">
+                            <a href="@Url.Action("Login","Home")">Đăng nhập để Đánh giá</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function SubmitComment() {
+        if (document.querySelector("#Rating").value == "0") {
+            alert("Vui lòng đánh giá bằng sao");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function CRate(r) {
+        document.querySelector("#Rating").value = r;
+        for (let i = 1; i <= r; i++) {
+            document.querySelector("#Rate" + i).setAttribute('class', 'star--gold fas fa-star');
+        }
+
+        for (let i = r + 1; i <= 5; i++) {
+            document.querySelector("#Rate" + i).setAttribute('class', 'star--normal fas fa-star');
+        }
+    }
+
+    function CRateOver(r) {
+        for (var i = 1; i <= r; i++) {
+            document.querySelector("#Rate" + i).setAttribute('class', 'star--gold fas fa-star');
+        }
+    }
+
+    function CRateOut(r) {
+        for (var i = 1; i <= r; i++) {
+            document.querySelector("#Rate" + i).setAttribute('class', 'star--normal fas fa-star');
+        }
+    }
+
+    function CRateSelected() {
+        var setRating = document.querySelector("#Rating").value;
+        for (var i = 1; i <= setRating; i++) {
+            document.querySelector("#Rate" + i).setAttribute('class', 'star--gold fas fa-star');
+        }
+    }
+</script>
