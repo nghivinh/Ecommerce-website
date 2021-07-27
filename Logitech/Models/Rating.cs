@@ -15,6 +15,10 @@ namespace Logitech.Models
 
         public DateTime? CreateDate { get; set; }
 
+        public int ProductId { get; set; }
+
+        public int AccountId { get; set; }
+
         public virtual Product Product { get; set; }
 
         public virtual Account Account { get; set; }

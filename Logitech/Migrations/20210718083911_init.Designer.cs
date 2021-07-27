@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Logitech.Migrations
 {
     [DbContext(typeof(LogitechContext))]
-    [Migration("20210713182410_EditRating1")]
-    partial class EditRating1
+    [Migration("20210718083911_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -102,14 +102,14 @@
                 <div class="product-detail__information">
                     <h2 class="product-detail__information-heading">Thông tin Sản Phẩm</h2>
                     <div class="product-detail__information-text">
-                        @Model.Description
+                        @Html.Raw(Model.Description.Replace("\r\n", "<br />"))
                     </div>
                 </div>
             </div>
         </div>
         <div class="grid__row mt-36 pb-36">
             <div class="grid__ful-width">
-                <div class="product-detail__feedback">
+                <div id="feadback" class="product-detail__feedback" >
                     <h2 class="product-detail__feedback-heading">Đánh Giá Sản Phẩm</h2>
                     @foreach (var item in Model.ListOfReview)
                     {

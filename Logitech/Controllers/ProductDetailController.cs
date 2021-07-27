@@ -81,7 +81,7 @@ namespace Logitech.Controllers
             context.Ratings.Add(ratings);
             context.SaveChanges();
 
-            return RedirectToAction("Details", "ProductDetail", new { id = productId });
+            return RedirectToAction("Details", "ProductDetail", new { id = productId }, "feadback");
         }
 
     }

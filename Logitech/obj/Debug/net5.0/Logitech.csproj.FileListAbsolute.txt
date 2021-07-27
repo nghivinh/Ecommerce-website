@@ -147,3 +147,8 @@ D:\Nam4\Logitech\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 D:\Nam4\Logitech\obj\Debug\net5.0\Razor\Views\Home\Register.cshtml.g.cs
 D:\Nam4\Logitech\obj\Debug\net5.0\Razor\Views\Shared\_LayoutHeader.cshtml.g.cs
 D:\Nam4\Logitech\obj\Debug\net5.0\Razor\Views\ProductDetail\Details.cshtml.g.cs
+D:\Nam4\Logitech\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Nam4\Logitech\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Nam4\Logitech\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Nam4\Logitech\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Nam4\Logitech\obj\Debug\net5.0\Logitech.MvcApplicationPartsAssemblyInfo.cs

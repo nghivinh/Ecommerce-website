@@ -58,7 +58,7 @@
                         @foreach (var item in ViewBag.Categorys)
                         {
                             <li class="category-item category-item--normal">
-                                <a href="@Url.Action("Index","Home", new { categoryId = item.Id })" class="category-item__link">@item.Name</a>
+                                <a href="@Url.Action("Index","Home", new { categoryId = item.Id })#product" class="category-item__link">@item.Name</a>
                             </li>
                         }
                     </ul>
@@ -184,8 +184,11 @@
         if (sold >= 1000)
         {
             return value = (Math.Round((sold / 1000), 1).ToString()) + "k";
+        } 
+        else
+        {
+            return sold.ToString();
         }
-        return sold.ToString() + "k";
     }
 }
 

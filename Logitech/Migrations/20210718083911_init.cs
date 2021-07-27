@@ -15,8 +15,7 @@ namespace Logitech.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Avarta = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -69,26 +68,28 @@ namespace Logitech.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductRatings",
+                name: "Ratings",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Rating = table.Column<float>(type: "real", nullable: false),
+                    Star = table.Column<float>(type: "real", nullable: false),
+                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     ProductId = table.Column<int>(type: "int", nullable: true),
                     AccountId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductRatings", x => x.Id);
+                    table.PrimaryKey("PK_Ratings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductRatings_Accounts_AccountId",
+                        name: "FK_Ratings_Accounts_AccountId",
                         column: x => x.AccountId,
                         principalTable: "Accounts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ProductRatings_Products_ProductId",
+                        name: "FK_Ratings_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -96,25 +97,25 @@ namespace Logitech.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductRatings_AccountId",
-                table: "ProductRatings",
-                column: "AccountId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductRatings_ProductId",
-                table: "ProductRatings",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ratings_AccountId",
+                table: "Ratings",
+                column: "AccountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ratings_ProductId",
+                table: "Ratings",
+                column: "ProductId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ProductRatings");
+                name: "Ratings");
 
             migrationBuilder.DropTable(
                 name: "Accounts");
