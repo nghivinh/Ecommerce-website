@@ -1,0 +1,105 @@
+
+
+.admin__heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+	height: var(--heading-height);
+	align-items: center;
+}
+
+.admin__body {
+    padding: 15px;
+    margin: 0 10px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+}
+
+.customers-table {
+    border-collapse:collapse;
+	width: 100%;
+	max-height: calc(100vh - var(--heading-height) - var(--navbar-height) - 30px );
+    overflow: auto;
+}
+
+.products-table {
+    display: block;
+    border-collapse: collapse;
+    width: 100%;
+    max-height: calc(100vh - var(--heading-height) - var(--navbar-height) - 30px );
+    overflow: auto;
+}
+
+.customers__title {
+    margin: 10px;
+    font-size: 2.8rem;
+}
+
+.btn.btn--primary {
+    font-size: 1.6rem;
+}
+
+.customers__id {
+    width: 40px;
+}
+
+.customers__username {
+    width: 200px;
+}
+
+.customers__password {
+    width: 250px;
+}
+
+.customers__fullname {
+    width: 200px;
+}
+
+.customers__phone {
+    width: 40px;
+}
+
+
+.customers-table__title--th {
+    border:1px solid #ccc;
+}
+
+.customers-table__title--th, 
+.customers-table__data--td {
+    padding: 10px;
+}
+
+.customers-table__title--th,
+.customers-table__data--td {
+    font-size: 1.6rem;
+}
+
+.btn.btn--normal {
+    min-width: 82px;
+}
+
+.btn.btn--edit,
+.btn.btn--delete {
+    margin: 8px 10px;
+}
+
+.btn--edit-icon, 
+.btn--delete-icon,
+.btn--save-icon {
+    padding-right: 5px;
+}
+
+table tr:nth-child(odd){
+    background-color:#eee;
+	border: 1px solid #ccc;
+}
+
+table tr:nth-child(even){
+    background-color:white;
+	border: 1px solid #ccc;
+}
+
+.customers-table__data--td {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}

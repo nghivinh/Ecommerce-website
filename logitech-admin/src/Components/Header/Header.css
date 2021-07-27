@@ -1,0 +1,47 @@
+.header-admin {
+    height: 54px;
+    background-color: #14A58B;
+  }
+  
+  .header-admin__navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+    padding-right: 10px;
+  height: var(--navbar-height);
+  }
+  
+  .header-admin__navbar-list {
+    display: flex;
+    list-style: none;
+    padding-top: 2px;
+    margin: 4px 0 0;
+  }
+  
+  .header-admin__navbar-item {
+    margin: 0 14px;
+    position: relative;
+    min-height: 26px;
+  }
+  
+  .header-admin__navbar-user {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header-admin__navbar-user-name {
+    margin-left: 4px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--white-color);
+  }
+  
+  .header-admin__navbar-item--decoration {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--white-color);
+  }
+  
+  .header-admin__navbar-item--strong {
+    font-weight: 400;
+  }

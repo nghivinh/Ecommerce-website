@@ -1,0 +1,104 @@
+.admin__heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+	height: var(--heading-height);
+	align-items: center;
+}
+
+.admin__body {
+    padding: 15px;
+    margin: 0 10px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+}
+
+.categories-table {
+    border-collapse:collapse;
+	width: 100%;
+	max-height: calc(100vh - var(--heading-height) - var(--navbar-height) - 30px );
+    overflow: auto;
+}
+
+.products-table {
+    display: block;
+    border-collapse: collapse;
+    width: 100%;
+    max-height: calc(100vh - var(--heading-height) - var(--navbar-height) - 30px );
+    overflow: auto;
+}
+
+.categories__title {
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+}
+
+.btn.btn--primary {
+    font-size: 1.6rem;
+}
+
+.categories__action {
+    width: 30px;
+}
+
+.categories__id {
+    width: 35px;
+}
+
+.categories__name {
+    width: 200px;
+}
+
+.categories__desc {
+    width: 200px;
+}
+
+
+.categories-table__title--th {
+    border:1px solid #ccc;
+}
+
+.categories-table__title--th, 
+.categories-table__data--td {
+    padding: 10px;
+}
+
+.categories-table__title--th,
+.categories-table__data--td {
+    font-size: 1.6rem;
+}
+
+.btn.btn--normal {
+    min-width: 82px;
+}
+
+.btn.btn--edit,
+.btn.btn--delete {
+    margin: 8px 10px;
+}
+
+.btn--edit-icon, 
+.btn--delete-icon,
+.btn--save-icon {
+    padding-right: 5px;
+}
+
+table tr:nth-child(odd){
+    background-color:#eee;
+	border: 1px solid #ccc;
+}
+
+table tr:nth-child(even){
+    background-color:white;
+	border: 1px solid #ccc;
+}
+
+.categories-table__data--td {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.btn--edit-product {
+    text-decoration: none;
+    color: var(--white-color);
+}

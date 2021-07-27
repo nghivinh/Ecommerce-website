@@ -1,0 +1,46 @@
+.admin__add-new-data {
+    background-color: var(--white-color);
+    margin: 20px;
+    padding: 10px;
+    border-top: 3px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.admin__add-new-title {
+    font-size: 2.8rem;
+}
+
+.category-name {
+    display: flex;
+}
+
+
+.category-name__title,
+.category-description__title {
+    font-size: 1.6rem;
+}
+
+.category-name__title {
+    padding-left: 200px;
+    margin-right: 10px;
+}
+
+.category-name__input {
+    height: 39px;
+    width: 700px;
+}
+
+.category-description {
+    display: flex;
+    margin-top: 10px;
+}
+
+.category-description__title {
+    padding-left: 163px;
+    margin-right: 9px;
+    margin-top: 0px;
+}
+
+.category-description__input {
+    width: 700px;
+}

@@ -1,0 +1,106 @@
+/*Heading Product*/
+.admin__heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+	height: var(--heading-height);
+	align-items: center;
+}
+
+.products__title {
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+}
+
+.btn.btn--primary {
+    font-size: 1.6rem;
+}
+
+/*body Product*/
+.admin__body {
+    padding: 15px;
+    margin: 0 10px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+}
+
+.products-table {
+    display: block;
+    border-collapse: collapse;
+    width: 100%;
+    max-height: calc(100vh - var(--heading-height) - var(--navbar-height) - 30px );
+    overflow: auto;
+}
+
+.btn.btn--edit,
+.btn.btn--delete {
+    margin: 8px 10px;
+}
+
+.btn--edit-icon, 
+.btn--delete-icon,
+.btn--save-icon {
+    padding-right: 5px;
+}
+
+table tr:nth-child(odd){
+    background-color:#eee;
+	border: 1px solid #ccc;
+}
+
+table tr:nth-child(even){
+    background-color:white;
+	border: 1px solid #ccc;
+}
+
+.products-table__data-img {
+    width: 100px;
+    height: 100px;
+}
+
+.product-table__data--name {
+    width: 114px;
+}
+
+.product-table__data--description,
+.product-table__data--ingredient {
+    display: -webkit-box;
+    width: 100px;
+    height: 100px;
+    line-height: 1.3;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+
+.product-table__data--action {
+    width: 90px;
+}
+
+.products-table__title--th {
+    border:1px solid #ccc;
+}
+
+.products-table__data--td {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.products-table__title--th, 
+.products-table__data--td {
+    padding:10px;
+    font-size: 1.6rem;
+	text-align: center;
+}
+
+.products-table__icon-decoration {
+    text-align: center;
+}
+
+.products-table__data--icon-check {
+    color: #01A101;
+}
+
+.products-table__data--icon-cross {
+    color: #F40204;
+}

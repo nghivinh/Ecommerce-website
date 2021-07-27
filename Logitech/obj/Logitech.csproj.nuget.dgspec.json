@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Nam4\\Logitech\\Logitech.csproj": {}
+    "D:\\Nam4\\Ecommerce-website\\Logitech\\Logitech.csproj": {}
   },
   "projects": {
-    "D:\\Nam4\\Logitech\\Logitech.csproj": {
+    "D:\\Nam4\\Ecommerce-website\\Logitech\\Logitech.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nam4\\Logitech\\Logitech.csproj",
+        "projectUniqueName": "D:\\Nam4\\Ecommerce-website\\Logitech\\Logitech.csproj",
         "projectName": "Logitech",
-        "projectPath": "D:\\Nam4\\Logitech\\Logitech.csproj",
+        "projectPath": "D:\\Nam4\\Ecommerce-website\\Logitech\\Logitech.csproj",
         "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\Nam4\\Logitech\\obj\\",
+        "outputPath": "D:\\Nam4\\Ecommerce-website\\Logitech\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",

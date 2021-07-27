@@ -1,0 +1,115 @@
+:root {
+    --primary-color: rgba(20, 165, 139, 1);
+	--primary-hover-color: rgba(20, 165, 139, 0.8);
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #e7e7e7;
+    --star-gold-color: #AB914D;
+    --heading-height: 82px;
+    --navbar-height: 56px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --background-product: #F5F1EB;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+/* Responsive */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+/* Test */
+.grid__column-2 {
+    width: calc(2/12 * 100%);
+}
+
+.grid__column-10 {
+    width: calc(10/12 * 100%);
+}
+
+/* Button style */
+.btn {
+    min-width: 88px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--primary:hover {
+	background-color: var(--primary-hover-color);
+}
+
+.btn--icon--add-new {
+    padding-right: 6px;
+}
+
+.btn-add-new {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.text--center {
+    text-align: center;
+}
+
+.btn.btn--edit {
+
+}
+
+.btn--delete {
+    background-color: rgb(228, 38, 79);
+    color: white;
+    border-radius: 4px;
+}
+
+.btn--delete:hover {
+    background-color: rgba(228, 38, 79, 0.8);
+}
+
+.btn--edit {
+    background-color: rgb(231, 147, 12);
+    color: white;
+    border-radius: 4px;
+}
+
+.btn--edit:hover {
+    background-color: rgba(231, 147, 12, 0.8);
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0/svxoOKCoqTzoBZyPor2Mpu3V3xBst4b3vUMUijTx6ST+IOVKojkUK7+mi24OvwZWNDIOe0Z2o6EtwGuzwO1Q==",
+  "dgSpecHash": "0fzJdOhDcMlMYcu6bwtRQ17FRoYZSySF1iBIVtPLlDE2SGe5piyVuU+F0dmAwS0T8ncJKhQ/gbTKvXrJZTU3Vg==",
   "success": true,
-  "projectFilePath": "D:\\Nam4\\Logitech\\Logitech.csproj",
+  "projectFilePath": "D:\\Nam4\\Ecommerce-website\\Logitech\\Logitech.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nguye\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.2.0\\microsoft.aspnetcore.cryptography.internal.2.2.0.nupkg.sha512",
