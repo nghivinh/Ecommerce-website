@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/logitech/databases/logitechsql",
+      "type": "mssql.azure",
+      "connectionId": "LogitechContext",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

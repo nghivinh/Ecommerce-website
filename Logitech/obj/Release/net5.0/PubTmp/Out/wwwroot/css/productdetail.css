@@ -1,0 +1,280 @@
+.product-detail__wrap {
+	background-color: var(--white-color);
+}
+
+.product-detail__img {
+    width: 100%;
+    padding: 15px;
+}
+
+.product-detail {
+    padding: 15px;
+}
+
+.product-detail__name {
+    font-size: 2rem;
+    color: var(--text-color);
+	font-weight: 500;
+	margin-top: 5px;
+}
+
+.product-detail__quantity {
+	margin-top: 15px;
+    display: flex;
+	align-items: center;
+}
+
+.product-detail__rating {
+	margin-right: 15px;
+	display: flex;
+}
+
+.product-detail__rating-text {
+	font-size: 2rem;
+	color: var(--primary-color);
+	font-weight: 400;
+	line-height: 1rem;
+	margin-right: 5px;
+	text-decoration: underline;
+	letter-spacing: -1px;
+}
+
+.product-detail__rating-text-no {
+	font-size: 1.6rem;
+	font-weight: 300;
+	line-height: 1rem;
+	margin-right: 5px;
+}
+
+.product-detail__rating-star {
+	color: var(--star-normal-color);
+	font-size: 14px;
+}
+
+.product-detail__rating-star--gold {
+	color: var(--primary-color);
+}
+
+.product-detail__sold {
+	margin: 0 15px
+}
+
+.product-detail__sold-text {
+    font-size: 1.6rem;
+	margin-right: 5px;
+	letter-spacing: 0.1rem;
+}
+
+.product-detail__sold-label {
+    font-size: 1.4rem;
+    color: #888;
+}
+
+.product-detail__store {
+	margin-left: 15px;
+}
+
+.product-detail__store-text {
+	font-size: 1.6rem;
+	margin-right: 5px;
+	letter-spacing: 0.1rem;
+}
+
+.product-detail__store-label {
+	font-size: 1.4rem;
+    color: #888;
+}
+
+.product-detail__content {
+	padding: 15px 20px;
+}
+
+.product-detail__price {
+	margin: 20px 0;
+    font-weight: 400;
+	display: flex;
+	align-items: center;
+}
+
+.product-detail__price-old {
+	font-size: 1.6rem;
+    color: #888;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.product-detail__price-new {
+    font-size: 3rem;
+	color: var(--primary-color);
+}
+
+.product-detail__price-saleoff {
+	margin-left: 15px;
+	font-size: 1.3rem;
+	color: #fff;
+	text-transform: uppercase;
+	background: var(--primary-color-hover);
+	border-radius: 2px;
+	padding: 3px 4px;
+	font-weight: 600;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.product-detail__button {
+	margin: 30px 0;
+}
+
+.btn__add-to-cart,
+.btn__buy-now {
+	font-size: 1.5rem;
+	min-width: 180px;
+	border: 1px solid var(--primary-color);
+	padding: 0 12px;
+	height: 48px;
+}
+
+.btn__add-to-cart {
+	background-color: rgba(208,1,27,.08);
+	color: var(--primary-color);
+	margin-right: 10px;
+}
+
+.btn__buy-now {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn__buy-now:hover {
+	background-color: rgb(212, 24, 48);
+}
+
+/* Information && Feedback*/
+.product-detail__information,
+.product-detail__feedback {
+	background-color: var(--white-color);
+	padding: 20px 30px;
+}
+
+.product-detail__feedback-heading,
+.product-detail__information-heading {
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+}
+
+/* Information */
+.product-detail__information-text {
+	font-size: 1.6rem;
+	line-height: 2;
+	text-align: justify;
+}
+
+/* Feedback */
+.product-detail__feedback-list {
+	margin: 20px;
+}
+
+.product-detail__feedback-item {
+	padding: 0 10px;
+}
+
+.product-detail__feedback-item-top {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.product-detail__feedback-username {
+	font-size: 1.6rem;
+	margin: 0;
+	margin-right: 10px;
+}
+
+.product-detail__feedback-createDate {
+	color: #888;
+	font-size: 1.4rem;
+	margin: 0;
+}
+
+.product-detail__feedback-star {
+	font-size: 1.2rem;
+	color: var(--star-normal-color);
+}
+
+.product-detail__feedback-star--gold {
+	color: var(--star-gold-color);
+}
+
+.product-detail__feedback-comment {
+	font-size: 1.4rem;
+	margin: 15px 0 0;
+}
+
+.product-detail__feedback-list hr {
+	margin: 15px auto;
+}
+
+.product-detail__feedback-write {
+	margin: 0 30px;
+	padding: 0 25px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	background: #f3f3f3;
+}
+
+.product-detail__feedback-write-heading {
+	font-size: 1.7rem;
+	font-weight: 500;
+}
+
+.product-detail__feedback-write-comment {
+}
+
+.product-detail__feedback-textarea {
+	font-size: 1.5rem;
+	width: 100%;
+	outline: none;
+	padding: 10px;
+}
+
+.product-detail__feedback-rating {
+	display: flex;
+	align-items: center;
+}
+
+.product-detail__feedback-rating-label {
+	font-size: 1.5rem;
+	line-height: 1.4;
+	text-align: center;
+	margin-right: 20px;
+}
+
+.product-detail__feedback-rating-action {
+	font-size: 2.8rem;
+	margin-right: 5px;
+}
+
+.product-detail__feedback-select-star {
+	margin-left: auto;
+}
+
+.product-detail__feedback-write--no {
+	text-align: center;
+	background-color: #999;
+	margin: 0 140px;
+	cursor: pointer;
+}
+
+.product-detail__feedback-write--no > a {
+	color: white;
+	font-size: 1.6rem;
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+}
+
+
+
+

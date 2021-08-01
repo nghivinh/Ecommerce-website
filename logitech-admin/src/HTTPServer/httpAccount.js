@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-var domain="http://localhost:54015/api/IAccount/api/Account";
+var domain="https://logitechdemo.azurewebsites.net/api/IAccount/api/Account";
 
 function callApi(endpoint, method='GET',body){
         return axios({

@@ -48,18 +48,50 @@
         <div class="grid__row">
             <!--Category-->
             <div class="grid__col-2">
-                <nav class="category">
+                <nav id="category" class="category">
                     <div class="category__heading">
                         <i class="category__heading-icon fas fa-list"></i>
                         <h3 class="category__heading-text">Danh Mục</h3>
                     </div>
 
                     <ul class="category-list">
-                        @foreach (var item in ViewBag.Categorys)
-                        {
-                            <li class="category-item category-item--normal">
-                                <a href="@Url.Action("Index","Home", new { categoryId = item.Id })#product" class="category-item__link">@item.Name</a>
-                            </li>
+                        @{
+                            int index = 1;
+                            @foreach (var item in ViewBag.Categorys)
+                            {
+                                if (index == 1)
+                                {
+                                    if (ViewBag.CategoryId == 0)
+                                    {
+                                        <li class="category-item category-item--active">
+                                            <a href="@Url.Action("Index","Home", new { categoryId = 0 })#category" class="category-item__link">Tất cả sản phẩm</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="category-item category-item--normal">
+                                            <a href="@Url.Action("Index","Home", new { categoryId = 0 })#category" class="category-item__link">Tất cả sản phẩm</a>
+                                        </li>
+                                    }
+                                    index = 0;
+                                }
+                                else
+                                {
+                                    if (item.Id == ViewBag.CategoryId)
+                                    {
+                                        <li class="category-item category-item--active">
+                                            <a href="@Url.Action("Index","Home", new { categoryId = item.Id })#category" class="category-item__link">@item.Name</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="category-item category-item--normal">
+                                            <a href="@Url.Action("Index","Home", new { categoryId = item.Id })#category" class="category-item__link">@item.Name</a>
+                                        </li>
+                                    }
+                                }
+                                
+                            }
                         }
                     </ul>
                 </nav>
@@ -193,8 +225,15 @@
 }
 
 <script>
-    //function category ()
-        
-    
+    function optionCategory(id) {
+        var categories = document.getElementsByClassName("category-item");
+        for (var i = 0; i < categories.length; i++) {
+            if (i === id) {
+                categories[i].setAttribute('class', 'category-item category-item--active');
+            } else {
+                categories[i].setAttribute('class', 'category-item category-item--normal');
+            }
+        }
+    }
 </script>
 

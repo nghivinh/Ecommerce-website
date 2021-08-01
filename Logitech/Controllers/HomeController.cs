@@ -58,6 +58,8 @@ namespace Logitech.Controllers
                 products = products.Where(p => p.CategoryId == categoryId);
             }
 
+            ViewBag.CategoryId = categoryId;
+
             return View(products.ToList());
         }
 

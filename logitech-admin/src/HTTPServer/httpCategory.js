@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-var domain="http://localhost:54015/api/ICategory/api/Category";
+var domain="https://logitechdemo.azurewebsites.net/api/ICategory/api/Category";
 
 function callApi(endpoint, method='GET',body){
         return axios({

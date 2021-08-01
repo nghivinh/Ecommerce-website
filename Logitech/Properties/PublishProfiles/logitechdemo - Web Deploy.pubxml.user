@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfXWuGaRaSU6Flky7QbT57wAAAAACAAAAAAAQZgAAAAEAACAAAADjN8rjntEqZGddOCnMlKemHw5jgvJWqhqiURyhmR67dgAAAAAOgAAAAAIAACAAAAA0mqpB0K35O3uX2VG/RQZUXJ4+pmIf7gL49IAaxyE8k4AAAAA7VmQLcuT1BWMGHBYNlSWSl9RmXi7kpc+krFr8xyZiJzdDcNpArJwwcPrYwRSQdu3NbYjbAY3S8jtDMZXjSoXGP7DnwDqNYlmwdRCVnAexjVsGWneDdpAe68E4V/icQATJklm9dEKgO9MGTa5GBGD5PP1Ks97/lyXFte/uAKbhakAAAABXBIn7qA9ikO0/G8gM671Eti9QX8L0XUTFCo76mfsE8NgsxVOS3LBvMAZ03Y/5PoFWnqa4mz4tE7bFMi0P3ODo</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="LogitechContext">
+      <Value>Data Source=tcp:logitech.database.windows.net,1433%3bInitial Catalog=logitechsql%3bUser Id=nghivinh%40logitech%3bPassword=Nghilanghi2802</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
