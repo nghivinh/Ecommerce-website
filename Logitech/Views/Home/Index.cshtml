@@ -56,41 +56,33 @@
 
                     <ul class="category-list">
                         @{
-                            int index = 1;
+                            if (ViewBag.CategoryId == 0)
+                            {
+                                <li class="category-item category-item--active">
+                                    <a href="@Url.Action("Index","Home", new { categoryId = 0 })#category" class="category-item__link">Tất cả sản phẩm</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="category-item category-item--normal">
+                                    <a href="@Url.Action("Index","Home", new { categoryId = 0 })#category" class="category-item__link">Tất cả sản phẩm</a>
+                                </li>
+                            }
+
                             @foreach (var item in ViewBag.Categorys)
                             {
-                                if (index == 1)
+                                if (item.Id == ViewBag.CategoryId)
                                 {
-                                    if (ViewBag.CategoryId == 0)
-                                    {
-                                        <li class="category-item category-item--active">
-                                            <a href="@Url.Action("Index","Home", new { categoryId = 0 })#category" class="category-item__link">Tất cả sản phẩm</a>
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li class="category-item category-item--normal">
-                                            <a href="@Url.Action("Index","Home", new { categoryId = 0 })#category" class="category-item__link">Tất cả sản phẩm</a>
-                                        </li>
-                                    }
-                                    index = 0;
+                                    <li class="category-item category-item--active">
+                                        <a href="@Url.Action("Index","Home", new { categoryId = item.Id })#category" class="category-item__link">@item.Name</a>
+                                    </li>
                                 }
                                 else
                                 {
-                                    if (item.Id == ViewBag.CategoryId)
-                                    {
-                                        <li class="category-item category-item--active">
-                                            <a href="@Url.Action("Index","Home", new { categoryId = item.Id })#category" class="category-item__link">@item.Name</a>
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li class="category-item category-item--normal">
-                                            <a href="@Url.Action("Index","Home", new { categoryId = item.Id })#category" class="category-item__link">@item.Name</a>
-                                        </li>
-                                    }
+                                    <li class="category-item category-item--normal">
+                                        <a href="@Url.Action("Index","Home", new { categoryId = item.Id })#category" class="category-item__link">@item.Name</a>
+                                    </li>
                                 }
-                                
                             }
                         }
                     </ul>
@@ -223,17 +215,3 @@
         }
     }
 }
-
-<script>
-    function optionCategory(id) {
-        var categories = document.getElementsByClassName("category-item");
-        for (var i = 0; i < categories.length; i++) {
-            if (i === id) {
-                categories[i].setAttribute('class', 'category-item category-item--active');
-            } else {
-                categories[i].setAttribute('class', 'category-item category-item--normal');
-            }
-        }
-    }
-</script>
-
